@@ -1,0 +1,41 @@
+<template>
+<div>
+  {{lingmsg}}
+  <button @click='testM'>click for test</button>
+  {{testprop}}
+
+  <the-card href="#" variant="horizontal" img-src="https://flowbite.com/docs/images/blog/image-4.jpg" img-alt="Desk">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+    <p class="font-normal text-gray-700 dark:text-gray-400">
+      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+    </p>
+  </the-card>
+</div>
+</template>
+
+<script >
+
+export default {
+  name: "MyComp",
+  props:{
+    lingmsg:Number,
+    testprop:String,
+  },
+  data(){
+    return{
+      test:0,
+
+    }
+  },
+  methods:{
+    testM(){
+
+      this.$emit('update:lingmsg',(this.lingmsg+1)  )
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>
